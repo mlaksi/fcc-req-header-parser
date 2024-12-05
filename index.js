@@ -28,11 +28,11 @@ app.get("/api/whoami", (req, res) => {
   //console.log(req.headers["x-forwarded-for"]);
 
   const ip =
-    req.socket?.remoteAddress.slice(7) || req.connection?.remoteAddress;
-  console.log(ip);
+    req.socket?.remoteAddress.slice(7) ||
+    req.connection?.remoteAddress.slice(7);
 
   res.json({
-    ipadress: ip,
+    ipaddress: ip,
     language: req.headers["accept-language"],
     software: req.headers["user-agent"],
   });
